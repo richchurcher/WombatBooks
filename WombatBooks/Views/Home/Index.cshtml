@@ -1,0 +1,24 @@
+﻿@using WombatBooks.Models
+@model WombatBooks.Models.BookResult
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Wombat.NET</h1>
+    <p class="lead">Wombat.NET is a free web framework for marsupials.</p>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Books about Wombats</h2>
+
+        <p>Items: @Model.totalItems</p>
+        <ul>
+        @foreach (Item item in Model.items)
+        {
+            <li><em><a href="@item.selfLink">@item.volumeInfo.title</a></em></li>
+        }
+        </ul>
+    </div>
+</div>
